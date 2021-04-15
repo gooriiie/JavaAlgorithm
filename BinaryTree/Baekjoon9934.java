@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 
-public class Baekjoon9934 {
+public class Baekjoon9934 {		// 완전 이진트리
 	
 	static int k;
 	static ArrayList<ArrayList<Integer>> result;

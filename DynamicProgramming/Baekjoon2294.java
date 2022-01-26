@@ -25,20 +25,20 @@ public class Baekjoon2294 {
 			coin[i] = Integer.parseInt(br.readLine());
 		}
 		
-		dp[0] = 1;
 		
-		for(int i = 1; i < n; i++) {
+		for(int i = 0; i < k+1; i++) {
+			dp[i] = 100001;
+		}
+		
+		dp[0] = 0;
+		
+		for(int i = 0; i < n; i++) {
 			for(int j = coin[i]; j < k+1; j++) {
-				dp[j] = min(dp[j] + dp[j-coin[i]], dp[j]);
+				dp[j] = Math.min(dp[j - coin[i]] + 1, dp[j]);
 			}
 		}
 		
-		System.out.println(dp[k]);
-	}
-
-	private static int min(int i, int j) {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println(dp[k] == 100001 ? -1 : dp[k]);
 	}
 
 }
